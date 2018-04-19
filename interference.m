@@ -1,24 +1,30 @@
 % test for interference
+clear;
 
 x = -20:0.1:120;
 lambda = 2*pi;
 
+x_target = 88;
+x_sources = [0 10 26 57 78 100];
+nr_sources = size(x_sources, 2);
+distance = abs(x_target-x_sources);
+phaseshift = distance-floor(distance/lambda)*lambda;
+
 for t = 0:0.1:10
-    f = sin(abs(x)-t-(30-4*lambda));        % origin at 0
-    g = sin(abs(x-100)-t-(70-11*lambda));   % origin at 100
-    h = sin(abs(x-20)-t-(10-lambda));       % origin at 20
-    k = sin(abs(x-50)-t-(20-3*lambda));     % origin at 50
-    gesamt = f+g+h+k;
-    plot(x, f);
-    hold on
-    plot(x, g);
-    plot(x, h);
-    plot(x, k);
-    plot(x, gesamt);
-    plot([30 30], [-4 4]);
-    hold off
+    clf;
     
-    axis([-20 120 -4 4]);
+    all = 0;
+    hold on
+    for i = 1:nr_sources
+        part = sin(abs(x-x_sources(i))-t-phaseshift(i));
+        all = all+part;
+        plot(x, part);
+    end
+
+    plot(x, all);
+    plot([x_target x_target], [-nr_sources nr_sources]);
+    axis([-20 120 -nr_sources nr_sources]);
+    hold off
     
     pause on;
     pause(1);
