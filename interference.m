@@ -1,4 +1,4 @@
-% test for interference
+% test for 1D interference
 clear;
 
 x = -20:0.1:120;
