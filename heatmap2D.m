@@ -13,7 +13,7 @@ dy = 0.5;
 y_min = -20;
 y_max = 120;
 
-dt = 0.1;
+dt = 0.05;
 t_min = 0;
 t_max = 2*pi;
 
