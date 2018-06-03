@@ -68,27 +68,4 @@ hold off
 k_x = (x_target-x_min)/dx+1;
 k_y = (y_target-y_min)/dy+1;
 amp_target = amp(k_x, k_y);
-sprintf('Amplitude %f at target point (%d, %d)', amp_target, x_target, y_target)
-
-
-% find minimum for each position
-function y = getMinMatrix(x1, x2)
-    y = zeros(size(x1));
-    
-    for i = 1:size(x1, 1)
-        for j = 1:size(x1, 2)
-           y(i, j) = min(x1(i, j), x2(i, j)); 
-        end
-    end
-end
-
-% find maximum for each position
-function y = getMaxMatrix(x1, x2)
-    y = zeros(size(x1));
-    
-    for i = 1:size(x1, 1)
-        for j = 1:size(x1, 2)
-           y(i, j) = max(x1(i, j), x2(i, j)); 
-        end
-    end
-end
+sprintf('Amplitude %f at target point (%d, %d)', amp_target, x_target, y_target);
