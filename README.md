@@ -10,7 +10,7 @@ Authors:
 ## Introduction
 
 ## Implementation
-
+  
 !["GUI"|small](images/gui.png "GUI")  
 
 The upper image shows the GUI of our beamforming app. This GUI is roughly partitioned into four sections. On the left side a plot of the signal amplitude is shown for the area from 0 to 50 in 2-dimensional space. On the right there are three sections: The top one specifying the target, the middle one specifying the source and the bottom one specifying the radiation characteristics of the sources. The beamforming can be enabled/disabled by changing the checkbox beneath the calc button. After each change of any input source the calc button has to be pushed to apply the changes to the plot.
