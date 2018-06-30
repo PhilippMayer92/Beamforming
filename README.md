@@ -9,6 +9,16 @@ Authors:
 
 ## Introduction
 
+Beamforming is a signal processing technique used to shape the beam in the direction of the receiver. Therefore a several sources send exactly the same signal, but with a different phaseshift/delay. Based on the physical principal of interference the waves superpose to a resultant wave forming a virtual "beam", which is targeted toward the destination.
+The principle of superposition of waves states that when two or more propagating waves of same type are incident on the same point, the resultant amplitude at that point is equal to the sum of the amplitudes of the individual waves. Thus it is possible that the superposed signal can be at some points the sum of all maximum values of the single signals [1][2].
+
+In the following image the principle of interference will be illustrated. In the left section the two signals (blue and red dashed) are perfect in phase and therefore results in a double as high superposed signal (green). In the right section the two signals have a phaseshift of 180°, thus the two signals will cancel out each other and the superposed signal is 0.
+
+!["GUI"|small](images/interference.png "Interference")  
+
+In our beamforming simulation we visulaize how, with a various amount of sources (which sends out the same wave with a diffrent delay (phase)), a maximum signal value can be achieved at a variable target point.
+
+
 ## Implementation
   
 !["GUI"|small](images/gui.PNG "GUI")  
@@ -31,4 +41,7 @@ For the other two modes there is one direction with no damping. Aside of this di
 For the direction with minimal damping also two modes exist. In default mode this direction is different for each source and given by the direction to the target point. By checking the "Fixed direction" checkbox the direction of the minimal damping can be fix at the value of the "Angle [degree]" input field between -180 degree and +180 degree where 0 degree means the positive x-direction. This holds for all sources.  
 Additionally the damping characteristic is shown by the diagram at the bottom of this section. If the direction is not fixed, then 0 degree means the direction to the target.
 
-## Results
+### References
+[1]"Wave interference", En.wikipedia.org, 2018. [Online]. Available: https://en.wikipedia.org/wiki/Wave_interference. [Accessed: 22- Jun- 2018].
+
+[2]"What is Beamforming? - Definition from Techopedia", Techopedia.com, 2018. [Online]. Available: https://www.techopedia.com/definition/28945/beamforming. [Accessed: 22- Jun- 2018].
